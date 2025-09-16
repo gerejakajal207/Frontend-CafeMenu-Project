@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cafe Aroma • Feedback</title>
+  <link href="https://fonts.googleapis.com">
+  <link href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="menu_style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html">
+      <div class="brand-mark">CA</div>
+      <div class="brand-text">
+        <h1>Cafe Aroma</h1>
+        <p>Pure Veg • Fresh Brews</p>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#menu" class="nav-link">Menu</a>
+      <a href="index.html#cart" class="nav-link">Cart</a>
+    </nav>
+  </header>
+
+  <section class="feedback-section" style="padding-top:28px;">
+    <h2>Your Café Experience</h2>
+    <form id="feedbackForm" class="feedback-form">
+      <div class="two-col">
+        <div class="field">
+          <label for="visit-date">Visit date</label>
+          <input type="date" id="visit-date" required>
+        </div>
+        <div class="field">
+          <label for="visit-time">Time</label>
+          <input type="time" id="visit-time">
+        </div>
+      </div>
+
+      <fieldset class="field">
+        <legend>Food quality</legend>
+        <div class="rating">
+          <input type="radio" id="ff5" name="fq" value="5" /><label for="ff5">★</label>
+          <input type="radio" id="ff4" name="fq" value="4" /><label for="ff4">★</label>
+          <input type="radio" id="ff3" name="fq" value="3" /><label for="ff3">★</label>
+          <input type="radio" id="ff2" name="fq" value="2" /><label for="ff2">★</label>
+          <input type="radio" id="ff1" name="fq" value="1" /><label for="ff1">★</label>
+        </div>
+      </fieldset>
+
+      <div class="two-col">
+        <div class="field">
+          <label>Service speed</label>
+          <select required>
+            <option value="">-- Select --</option>
+            <option>Very fast</option>
+            <option>Just right</option>
+            <option>Could be faster</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Staff friendliness</label>
+          <select required>
+            <option value="">-- Select --</option>
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Average</option>
+            <option>Poor</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Which item did you enjoy most?</label>
+        <input type="text" placeholder="e.g., Cappuccino, Margherita">
+      </div>
+
+      <div class="field">
+        <label>Would you recommend us to a friend?</label>
+        <div class="nps" id="nps2">
+          <button type="button" class="nps-btn" data-score="0">0</button><button type="button" class="nps-btn" data-score="1">1</button><button type="button" class="nps-btn" data-score="2">2</button><button type="button" class="nps-btn" data-score="3">3</button><button type="button" class="nps-btn" data-score="4">4</button><button type="button" class="nps-btn" data-score="5">5</button><button type="button" class="nps-btn" data-score="6">6</button><button type="button" class="nps-btn" data-score="7">7</button><button type="button" class="nps-btn" data-score="8">8</button><button type="button" class="nps-btn" data-score="9">9</button><button type="button" class="nps-btn" data-score="10">10</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Any suggestions to improve?</label>
+        <textarea rows="3" placeholder="Tell us what to keep, fix or try next..."></textarea>
+      </div>
+
+      <div class="field checkbox">
+        <input type="checkbox" id="optin" />
+        <label for="optin">Send me occasional menu updates & offers</label>
+      </div>
+
+      <button type="submit" class="btn-primary">Submit</button>
+      <p id="ff-msg" class="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Cafe Aroma • Pure Veg Café</p>
+  </footer>
+
+  <script>
+    const nps2 = document.getElementById('nps2');
+    let score2 = null;
+    nps2.addEventListener('click',(e)=>{
+      const b = e.target.closest('.nps-btn'); if(!b) return;
+      nps2.querySelectorAll('.nps-btn').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active'); score2 = b.dataset.score;
+    });
+    document.getElementById('feedbackForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      document.getElementById('ff-msg').textContent = 'Thank you for your feedback!';
+      nps2.querySelectorAll('.nps-btn').forEach(x=>x.classList.remove('active')); score2=null;
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

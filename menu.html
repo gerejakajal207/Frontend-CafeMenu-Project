@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cafe Aroma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="menu_style.css" />
+  <script defer src="menu_script.js"></script>
+</head>
+<body id="top">
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <button class="nav-toggle">☰</button>
+    <a class="brand" href="#top">
+      <img src="static/logo.png" class="brand-mark" alt="Cafe Aroma">
+      
+      <div class="brand-text">
+        <h1>Cafe Aroma</h1>
+        <p>Pure Veg • Fresh Brews</p>
+      </div>
+    </a>
+    <nav class="nav-links" data-collapsed="true">
+      <a href="#menu" class="nav-link">Menu</a>
+      <a href="#feedback" class="nav-link">Feedback</a>
+      <a href="#cart" class="nav-link cart-link">
+        <span>Cart</span>
+        <span id="cart-count" class="badge">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" role="banner">
+    <div class="hero-content">
+      <h2>Comfort food. Cozy corners.</h2>
+      <p>Great coffee, honest plates, and a little joy in every cup.</p>
+      <a href="#menu" class="btn-primary">Explore Menu</a>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <main id="menu" class="menu">
+    <div class="menu-head">
+      <h2>Menu</h2>
+      <p class="muted">Trimmed categories for a clean experience. Use the page numbers below.</p>
+    </div>
+
+    <!-- CATEGORY PAGES (2 categories per page) -->
+    <div id="category-pages" class="category-pages">
+      <!-- Page 1 -->
+      <section class="menu-page" data-page="1">
+        <!-- Pizza -->
+        <section class="menu-category" data-category="Pizza">
+          <header class="category-header">
+            <h3>Pizza</h3>
+            <p class="cat-sub">Hand-tossed. Wood-fired vibes.</p>
+          </header>
+          <div class="grid cards">
+            <article class="card">
+              <img class="card-media" src="static/margherita.png" alt="Margherita">
+              <div class="card-body">
+                <h4>Margherita</h4>
+                <p>Classic tomato, basil & mozzarella.</p>
+                <div class="card-foot">
+                  <span class="price">₹199</span>
+                  <button class="cart-btn" data-item="Margherita" data-price="199">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+             <img class="card-media" src="static/paneertikka.png" alt="PaneerTikka">
+              <div class="card-body">
+                <h4>Paneer Tikka</h4>
+                <p>Smoky paneer, peppers & onions.</p>
+                <div class="card-foot">
+                  <span class="price">₹249</span>
+                  <button class="cart-btn" data-item="Paneer Tikka Pizza" data-price="249">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+             <img class="card-media" src="static/farmhouse.png" alt="Farmhouse">
+              <div class="card-body">
+                <h4>Farmhouse</h4>
+                <p>Loaded veggies, extra cheese.</p>
+                <div class="card-foot">
+                  <span class="price">₹279</span>
+                  <button class="cart-btn" data-item="Farmhouse Pizza" data-price="279">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Burgers -->
+        <section class="menu-category" data-category="Burgers">
+          <header class="category-header">
+            <h3>Burgers</h3>
+            <p class="cat-sub">Stacked high. Messy good.</p>
+          </header>
+          <div class="grid cards">
+            <article class="card">
+              <img class="card-media" src="static/vegburger.png" alt="Veg Burger">
+              <div class="card-body">
+                <h4>Veg Burger</h4>
+                <p>Fresh veggies, signature sauce.</p>
+                <div class="card-foot">
+                  <span class="price">₹149</span>
+                  <button class="cart-btn" data-item="Veg Burger" data-price="149">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="card-media" src="static/alootikki.png" alt="Aloo Tikki Burger">
+              <div class="card-body">
+                <h4>Aloo Tikki Burger</h4>
+                <p>Desi patty, soft bun.</p>
+                <div class="card-foot">
+                  <span class="price">₹129</span>
+                  <button class="cart-btn" data-item="Aloo Tikki Burger" data-price="129">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="card-media" src="static/doublecheese.png" alt="Double cheese Burger">
+              <div class="card-body">
+                <h4>Double Cheese Burger</h4>
+                <p>Two patties, melty layers.</p>
+                <div class="card-foot">
+                  <span class="price">₹199</span>
+                  <button class="cart-btn" data-item="Double Cheese Burger" data-price="199">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <!-- Page 2 -->
+      <section class="menu-page" data-page="2" hidden>
+        <!-- Coffee -->
+        <section class="menu-category" data-category="Coffee">
+          <header class="category-header">
+            <h3>Coffee</h3>
+            <p class="cat-sub">Beans, balanced & beautiful.</p>
+          </header>
+          <div class="grid cards">
+            <article class="card">
+              <img class="card-media" src="static/capuccino.png" alt="Cappuccino">
+              <div class="card-body">
+                <h4>Cappuccino</h4>
+                <p>Bold espresso, silky foam.</p>
+                <div class="card-foot">
+                  <span class="price">₹149</span>
+                  <button class="cart-btn" data-item="Cappuccino" data-price="149">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="card-media" src="static/coldcoffee.png" alt="Cold Coffee">
+              <div class="card-body">
+                <h4>Cold Coffee</h4>
+                <p>Chilled, frothy delight.</p>
+                <div class="card-foot">
+                  <span class="price">₹129</span>
+                  <button class="cart-btn" data-item="Cold Coffee" data-price="129">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="card-media" src="static/chocolateespresso.png" alt="Chocolate espresso">
+              <div class="card-body">
+                <h4>Mocha</h4>
+                <p>Chocolate + espresso harmony.</p>
+                <div class="card-foot">
+                  <span class="price">₹169</span>
+                  <button class="cart-btn" data-item="Mocha" data-price="169">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Chai -->
+        <section class="menu-category" data-category="Chai">
+          <header class="category-header">
+            <h3>Chai</h3>
+            <p class="cat-sub">India in a cup.</p>
+          </header>
+          <div class="grid cards">
+            <article class="card">
+             <img class="card-media" src="static/masalachai.png" alt="masala chai">
+              <div class="card-body">
+                <h4>Masala Chai</h4>
+                <p>Warming spices, smooth finish.</p>
+                <div class="card-foot">
+                  <span class="price">₹49</span>
+                  <button class="cart-btn" data-item="Masala Chai" data-price="49">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="card-media" src="static/gingerchai.png" alt="Ginger Chai">
+              <div class="card-body">
+                <h4>Ginger Chai</h4>
+                <p>Zesty ginger kick.</p>
+                <div class="card-foot">
+                  <span class="price">₹59</span>
+                  <button class="cart-btn" data-item="Ginger Chai" data-price="59">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="card-media" src="static/elaichichai.png" alt="Elaichi Chai">
+              <div class="card-body">
+                <h4>Elaichi Chai</h4>
+                <p>Cardamom-scented comfort.</p>
+                <div class="card-foot">
+                  <span class="price">₹59</span>
+                  <button class="cart-btn" data-item="Elaichi Chai" data-price="59">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+    </div>
+
+    <!-- MENU PAGER -->
+    <div class="menu-pager" id="menu-pager"></div>
+  </main>
+
+  <!-- CART -->
+  <section id="cart" class="cart-section">
+    <div class="cart-wrap">
+      <h2>Your Cart</h2>
+      <ul id="cart-items" class="cart-list"></ul>
+      <div class="cart-total">
+        <p id="total" class="total">Total: ₹0</p>
+        <button id="order-now" class="btn-primary">Order Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section id="feedback" class="feedback-section">
+    <h2>Feedback</h2>
+    <form id="feedback-form" class="feedback-form" novalidate>
+      <div class="two-col">
+        <div class="field">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="Full name" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="name@example.com" required />
+        </div>
+      </div>
+
+      <fieldset class="field">
+        <legend>Food quality</legend>
+        <div class="rating" data-name="foodQuality">
+          <input type="radio" id="fq5" name="foodQuality" value="5" /><label for="fq5" title="5 stars">★</label>
+          <input type="radio" id="fq4" name="foodQuality" value="4" /><label for="fq4">★</label>
+          <input type="radio" id="fq3" name="foodQuality" value="3" /><label for="fq3">★</label>
+          <input type="radio" id="fq2" name="foodQuality" value="2" /><label for="fq2">★</label>
+          <input type="radio" id="fq1" name="foodQuality" value="1" /><label for="fq1">★</label>
+        </div>
+      </fieldset>
+
+      <div class="two-col">
+        <div class="field">
+          <label for="service-speed">Service speed</label>
+          <select id="service-speed" required>
+            <option value="">-- Select --</option>
+            <option>Very fast</option>
+            <option>Just right</option>
+            <option>Could be faster</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="staff">Staff friendliness</label>
+          <select id="staff" required>
+            <option value="">-- Select --</option>
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Average</option>
+            <option>Poor</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="fav-item">Favourite item</label>
+        <input type="text" id="fav-item" placeholder="e.g., Cappuccino, Margherita" />
+      </div>
+
+      <div class="field">
+        <label for="nps">Would you recommend us to a friend?</label>
+        <div class="nps" id="nps" role="group">
+          <button type="button" class="nps-btn" data-score="0">0</button><button type="button" class="nps-btn" data-score="1">1</button><button type="button" class="nps-btn" data-score="2">2</button><button type="button" class="nps-btn" data-score="3">3</button><button type="button" class="nps-btn" data-score="4">4</button><button type="button" class="nps-btn" data-score="5">5</button><button type="button" class="nps-btn" data-score="6">6</button><button type="button" class="nps-btn" data-score="7">7</button><button type="button" class="nps-btn" data-score="8">8</button><button type="button" class="nps-btn" data-score="9">9</button><button type="button" class="nps-btn" data-score="10">10</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">Any suggestions to improve?</label>
+        <textarea id="message" rows="3" placeholder="Tell us what to keep, fix or try next..."></textarea>
+      </div>
+
+      <div class="field checkbox">
+        <input type="checkbox" id="updates" />
+        <label for="updates">Send me occasional menu updates & offers</label>
+      </div>
+
+      <button type="submit" class="btn-primary">Submit Feedback</button>
+      <p id="feedback-msg" class="form-msg" role="status"></p>
+    </form>
+  </section>
+
+  <!-- TOAST -->
+  <div id="toast" role="status"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Cafe Aroma • Pure Veg Café</p>
+  </footer>
+</body>
+</html>
